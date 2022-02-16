@@ -1,0 +1,112 @@
+<form
+  class="mb-4 mt-6"
+  [formGroup]="retrieveBookingForm"
+  (ngSubmit)="onSubmit()"
+  [hidden]="retrieveBooking?.bookingCode"
+>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      Booking code
+    </label>
+    <input
+      name="bookingCode"
+      formControlName="bookingCode"
+      class="appearance-none border w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:border-black"
+      id="bookingCode"
+      type="text"
+     
+    />
+    <div
+      *ngIf="
+        retrieveBookingForm.invalid &&
+        (f['bookingCode'].dirty || f['bookingCode'].touched)
+      "
+      class="alert alert-danger"
+    >
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['bookingCode'].errors?.['required']"
+      >
+        Booking code is required.
+      </p>
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['bookingCode'].errors?.['minlength']"
+      >
+        Booking code must be at least 5 characters long.
+      </p>
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['bookingCode'].errors?.['maxlength']"
+      >
+        Booking code must be at most 6 characters long.
+      </p>
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['bookingCode'].errors?.['pattern']"
+      >
+        Booking code contains numbers between 2-9
+      </p>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+      Family name
+    </label>
+    <input
+      name="familyName"
+      formControlName="familyName"
+      class="appearance-none border w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:border-black"
+      id="familyName"
+      type="text"
+      
+    />
+    <div
+      *ngIf="
+        retrieveBookingForm.invalid &&
+        (f['familyName'].dirty || f['familyName'].touched)
+      "
+      class="alert alert-danger"
+    >
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['familyName'].errors?.['required']"
+      >
+        Family name is required.
+      </p>
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['familyName'].errors?.['minlength']"
+      >
+        Family name must be at least 2 characters long.
+      </p>
+      <p
+        class="text-red-500 text-xs italic"
+        *ngIf="f['familyName'].errors?.['maxlength']"
+      >
+        Family name must be at most 30 characters long.
+      </p>
+    </div>
+  </div>
+  <div class="flex flex-col items-center justify-center">
+    <button
+      (click)="getRetrieveBooking()"
+      class="bg-red-700 mb-2 hover:underline text-white font-bold py-4 px-8 rounded focus:outline-none focus:shadow-outline"
+      type="submit"
+    >
+      Retrieve Booking
+    </button>
+    <p
+        class="text-red-500 text-xs italic"
+        *ngIf="verificationError"
+      >
+        Please enter appropriate Booking code and Family name,
+      </p>
+  </div>
+</form>
+
+<app-booking-details
+  *ngIf="retrieveBooking?.bookingCode"
+  [bookingDetails]="{retrieveBooking}"
+>
+</app-booking-details>

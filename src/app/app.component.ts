@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'klm-frontend';
+
+  hideForm: boolean = false;
+
+  receiveHandleLogonFormData(data:boolean) {
+    this.hideForm=data;
+  }
+  
 }
