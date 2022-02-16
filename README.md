@@ -8,8 +8,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## TEST Data
 
-Booking code: PZIGZ3
-Family name: HESP
+- Booking code: PZIGZ3
+- Family name: HESP
 
 ## Code scaffolding
 
