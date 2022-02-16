@@ -9,10 +9,14 @@
     <div class="text-5xl text-center uppercase leading-snug">
       Retrieve Your Booking
     </div>
+    <div class="flex justify-center items-center mt-5">
+      <div class="h-1 w-5 bg-black"></div>
+      </div>
     <div *ngIf="!hideForm" class="mt-7 text-start">
       You can find your booking by filling out your family name and the booking
       code in your booking confirmation.
     </div>
+    
     <!-- Form  -->
     <app-logon-form
       (hideLogonForm)="receiveHandleLogonFormData($event)"
