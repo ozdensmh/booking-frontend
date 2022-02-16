@@ -8,7 +8,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
 import {InMemoryCache} from '@apollo/client/core';
-import { ListComponent } from './list/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
@@ -21,7 +20,6 @@ import { BookingDetailsComponent } from './booking-details/booking-details.compo
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
     LogonFormComponent,
     HeaderComponent,
     BookingDetailsComponent

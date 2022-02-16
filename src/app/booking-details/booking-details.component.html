@@ -1,50 +1,58 @@
-<mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <div class="font-bold">Your Booking Info</div>
-      </mat-panel-title>
-      <mat-panel-description >
-        <!-- KLM logo -->
-        <div >
-        <img src="../../assets/images/klm-logo-scaled.jpeg" class="w-9 h-9" alt="klm logo"/>
-        </div>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <!-- Content -->
-    <div class="content flex flex-col">
-        <!-- Header -->
-        <div class="bg-klm-blue py-3 px-1 w-full flex justify-between items-center">
-            <p class="text-white">Booking Code: {{bookingCode}}</p>
+<mat-expansion-panel
+  (opened)="panelOpenState = true"
+  (closed)="panelOpenState = false"
+>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <div class="font-bold">Your Booking Info</div>
+    </mat-panel-title>
+    <mat-panel-description>
+      <!-- KLM logo -->
+      <div>
+        <img
+          src="../../assets/images/klm-logo-scaled.jpeg"
+          class="w-9 h-9"
+          alt="klm logo"
+        />
+      </div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <!-- Content -->
+  <div class="content flex flex-col">
+    <!-- Header -->
+    <div class="bg-klm-blue py-3 px-1 w-full flex justify-between items-center">
+      <p class="text-white">Booking Code: {{ bookingCode }}</p>
 
-            <div class="">
-                <p class="text-white">Customer: {{customerName}}</p>
-                
-            </div>
-        </div>
-        <div class="py-3 px-1 w-full ">
-            <div class="font-bold">{{type}}</div>
-            <div>{{duration}}</div>
-        </div>
-        <div class="flex justify-between items-center mt-2  px-1 w-full ">
-            <!-- Departure City -->
-            <div class="text-gray-400">{{departureCity}}</div>
-            <!-- Arrive City -->
-            <div class="text-gray-400">{{arriveCity}}</div>
-        </div>
-        <div class="flex justify-between items-center  px-1 w-full ">
-            <div class="text-klm-blue uppercase text-3xl">{{departureIATACode}}</div>
-            <div class="bg-airplane ">
-                <img class=" h-12" src="../../assets/images/airplane.png"/>
-            </div>
-            <div class="text-klm-blue uppercase text-3xl">{{arriveCityIATACode}}</div>
-        </div>
-        <div class="flex justify-between items-center mt-2  px-1 w-full ">
-            <!-- Departure Hour -->
-            <div class="text-gray-400">{{departureHour}}</div>
-            <!-- Arrive Hour -->
-            <div class="text-gray-400">{{arriveHour}}</div>
-        </div>
-        
+      <div class="">
+        <p class="text-white">Customer: {{ customerName }}</p>
+      </div>
     </div>
-  </mat-expansion-panel>
+    <div class="py-3 px-1 w-full">
+      <div class="font-bold">{{ type }}</div>
+      <div>{{ duration }}</div>
+    </div>
+    <div class="flex justify-between items-center mt-2 px-1 w-full">
+      <!-- Departure City -->
+      <div class="text-gray-400">{{ departureCity }}</div>
+      <!-- Arrive City -->
+      <div class="text-gray-400">{{ arriveCity }}</div>
+    </div>
+    <div class="flex justify-between items-center px-1 w-full">
+      <div class="text-klm-blue uppercase text-3xl">
+        {{ departureIATACode }}
+      </div>
+      <div class="bg-airplane">
+        <img class="h-12" src="../../assets/images/airplane.png" />
+      </div>
+      <div class="text-klm-blue uppercase text-3xl">
+        {{ arriveCityIATACode }}
+      </div>
+    </div>
+    <div class="flex justify-between items-center mt-2 px-1 w-full">
+      <!-- Departure Hour -->
+      <div class="text-gray-400">{{ departureHour }}</div>
+      <!-- Arrive Hour -->
+      <div class="text-gray-400">{{ arriveHour }}</div>
+    </div>
+  </div>
+</mat-expansion-panel>
